@@ -14,10 +14,9 @@ export type InfoAboutIpType = {
 };
 
 @CommandHandler(GetInfoAboutIpCommand)
-export class GetInfoAboutIpHandler
+export class GetInfoAboutIpUsecase
   implements ICommandHandler<GetInfoAboutIpCommand, InfoAboutIpType>
 {
-  // здесь promise потому что реализовывая интерфейс ICommandHandler execute должен вернуть promise
   async execute(data: GetInfoAboutIpCommand): Promise<InfoAboutIpType> {
     const providedIp: string = data.ip;
 
@@ -31,7 +30,7 @@ export class GetInfoAboutIpHandler
         city: infoAboutIp.city,
       };
     } catch (err) {
-      throw new NotFoundException('Not found info about provided ip');
+      throw new NotFoundException();
     }
   }
 }

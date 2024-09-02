@@ -1,10 +1,10 @@
 import { Controller, Get, HttpCode, HttpStatus, Query } from '@nestjs/common';
-import { GetInfoAboutIpDto } from './dto/get-info-about-ip.dto';
+import { GetInfoAboutIpDto } from './dtos/GetInfoAboutIp.dto';
 import { CommandBus } from '@nestjs/cqrs';
 import {
   GetInfoAboutIpCommand,
   InfoAboutIpType,
-} from './application/get-info-about-ip.handler';
+} from './application/GetInfoAboutIp.usecase';
 
 @Controller()
 export class AppController {

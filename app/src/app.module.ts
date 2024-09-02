@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { CqrsModule } from '@nestjs/cqrs';
-import { GetInfoAboutIpHandler } from './application/get-info-about-ip.handler';
+import { GetInfoAboutIpUsecase } from './application/GetInfoAboutIp.usecase';
 
-const commandHandlers = [GetInfoAboutIpHandler];
+const commandHandlers = [GetInfoAboutIpUsecase];
 
 @Module({
   imports: [CqrsModule],
