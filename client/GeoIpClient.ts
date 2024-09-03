@@ -19,6 +19,8 @@ export class GeoIpClient {
         throw new Error('No data found for this IP');
       case 500:
         throw new Error('Server error');
+      default:
+        throw new Error('Unhandled error')
     }
   }
 }
